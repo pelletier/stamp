@@ -38,6 +38,10 @@ func init() {
 func main() {
 	flag.Parse()
 	inputs := flag.Args()
+	if len(inputs) == 0 {
+		fmt.Println(int32(time.Now().Unix()))
+		return
+	}
 	for _, input := range inputs {
 		result := parseDate(input)
 		if len(result) == 0 {
